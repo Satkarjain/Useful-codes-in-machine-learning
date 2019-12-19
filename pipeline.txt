@@ -1,0 +1,17 @@
+rom sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+from sklearn.pipeline import Pipeline
+
+# Construct some pipelines
+pipe_lr = Pipeline([('scl', StandardScaler()),
+			('pca', PCA(n_components=2)),
+			('clf', LogisticRegression(random_state=42))])
+
+pipe_svm = Pipeline([('scl', StandardScaler()),
+			('pca', PCA(n_components=2)),
+			('clf', svm.SVC(random_state=42))])
+			
+pipe_dt = Pipeline([('scl', StandardScaler()),
+			('pca', PCA(n_components=2)),
+			('clf', tree.DecisionTreeClassifier(random_state=42))])

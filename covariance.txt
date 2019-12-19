@@ -1,0 +1,4 @@
+>>> import numpy as np
+>>> cov_mat = np.cov(X_train_std.T)
+>>> eigen_vals, eigen_vecs = np.linalg.eig(cov_mat)
+>>> print('\nEigenvalues \n%s' % eigen_vals)
